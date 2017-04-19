@@ -9,4 +9,20 @@
   </div>
   <h2 class="text-center"><%= @group.title %></h2>
   <p style="font-size:20px;"><%= @group.description %></p>
+    <table class="table">
+      <th>
+        <tr>
+          <td> 文章内容 </td>
+          <td>发表者<td>
+          <td>发表时间</td>
+        </tr>
+      </th>
+      <% @posts.each do |post| %>
+      <tr>
+        <td><%= post.content %></td>
+        <td><%= post.user.email %></td>
+        <td><%= post.created_at %></td>
+      </tr>
+      <% end %>
+    </table>
 </div>
